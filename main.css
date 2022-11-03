@@ -1,0 +1,131 @@
+
+
+
+#clock-frame {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 200px;
+    font-family: "Zapfino";
+    margin-left: -50px;
+    color: rgb(45, 45, 45);
+}
+
+
+.frame {
+    display: flex;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: -100px;
+}
+
+
+.top {
+    position: relative;
+    background-color: black;
+    width: 100px;
+    height: 20px;
+
+}
+.right-top {
+    position: relative;
+    left: 5px;
+    bottom: -60px;
+    background-color: black;
+    width: 20px;
+    height: 100px;
+}
+.right-bottom {
+    position: relative;
+    background-color: black;
+    width: 20px;
+    height: 100px;
+    left: -15px;
+    bottom: -170px;
+
+}
+.bottom {
+    position: relative;
+    background-color: black;
+    width: 100px;
+    height: 20px;
+    bottom: -230px;
+    right: 140px;
+}
+.left-top {
+    position: relative;
+    background-color: black;
+    width: 20px;
+    height: 100px;
+    bottom: -60px;
+    right: 265px;
+}
+.left-bottom {
+    position: relative;
+    background-color: black;
+    width: 20px;
+    height: 100px;
+    bottom: -170px;
+    right: 285px;
+       
+}
+
+.middle {
+    position: relative;
+    background-color: black;
+    width: 100px;
+    height: 20px;
+    bottom: -110px;
+    right: 280px;
+}
+
+#first   {
+    position: absolute;
+    right: 200px;
+}
+#second {
+    position: absolute;
+
+}
+#third {
+    position: absolute;
+    left: 250px;
+}
+#fourth {
+    position: absolute;
+    left: 450px;
+}
+
+
+
+.middle-top {
+    position: relative;
+    background-color: black;
+    width: 20px;
+    height: 30px;
+    right: 10px;
+    top: 60px;
+
+
+}
+.middle-bottom {
+    position: relative;
+    background-color: black;
+    width: 20px;
+    height: 30px;
+    right: 30px;
+    top: 170px;
+
+
+}
+
+.off {
+    background-color: silver;
+}
