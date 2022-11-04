@@ -1,20 +1,6 @@
 
 
 
-#clock-frame {
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    font-size: 200px;
-    font-family: "Zapfino";
-    margin-left: -50px;
-    color: rgb(45, 45, 45);
-}
-
-
 .frame {
     display: flex;
     font-size: 100px;
@@ -88,21 +74,42 @@
 
 #first   {
     position: absolute;
-    right: 200px;
+    right: 350px;
+    
 }
 #second {
     position: absolute;
-
+    right: 150px;
 }
+
 #third {
     position: absolute;
-    left: 250px;
+    left: 100px;
 }
 #fourth {
     position: absolute;
-    left: 450px;
+    left: 300px;
 }
 
+#fifth {
+    position: absolute;
+    left: 550px;
+}
+
+
+#sixth {
+    position: absolute;
+    left: 750px;
+}
+#middle {
+    position: absolute;
+    right: 135px;
+}
+
+#middle__second {
+    position: absolute;
+    left: 305px;
+}
 
 
 .middle-top {
@@ -112,7 +119,7 @@
     height: 30px;
     right: 10px;
     top: 60px;
-
+    
 
 }
 .middle-bottom {
@@ -128,4 +135,8 @@
 
 .off {
     background-color: silver;
+    opacity: 0.3;
 }
+
+
+

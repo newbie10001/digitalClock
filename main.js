@@ -2,17 +2,32 @@ function Time() {
     // Creating object of the Date class
     var date = new Date();
     // Get current hour
-    var hour = date.getHours();
+    var hour = date.getHours().toString();
     // Get current minute
-    var minute = date.getMinutes();
+    var minute = date.getMinutes().toString();
+    // Get current second
+    var second = date.getSeconds().toString();
+
     // digital Array
     const digital = [[1,1,1,1,1,1,0],[0,1,1,0,0,0,0],[1,1,0,1,1,0,1],[1,1,1,1,0,0,1],[0,1,1,0,0,1,1]
     ,[1,0,1,1,0,1,1],[0,0,1,1,1,1,1],[1,1,1,0,0,1,0],[1,1,1,1,1,1,1],[1,1,1,0,0,1,1],]
     // digital id=""
     const digitalString = ["FrameTop","RightTop","RightBottom","Bottom","LeftBottom","LeftTop","Middle"]
-    var period = "";
+ 
     // Assigning AM / PM according to the current hour
+    hour = update(hour);
+    minute = update(minute);
+    second = update(second);
+    // time array to string 
+    let timeArray = [hour[0],hour[1],minute[0],minute[1],second[0],second[1]]
 
+    //digital Log Array
+    let firstArray = digital[timeArray[0]];
+    let secondArray = digital[timeArray[1]];
+    let thridArray = digital[timeArray[2]];
+    let fourthArray = digital[timeArray[3]];
+    let fifthArray = digital[timeArray[4]];
+    let sixthArray = digital[timeArray[5]];
 
 
     if (hour >= 12) {
@@ -23,53 +38,78 @@ function Time() {
 
     // Updating hour, minute, and second
     // if they are less than 10
-    hour = update(hour);
-    fristHour = hour.toString()[0];
-    secondHour = hour.toString()[1];
-    minute = update(minute);
-    thirdMinute = minute.toString()[0];
-    fourthMinute = minute.toString()[1];
-    const firstArray = digital[fristHour];
-    const secondArray = digital[secondHour];
-    const thridArray = digital[thirdMinute];
-    const fourthArray = digital[fourthMinute];
-    
-    var i;
-    for (i = 0; i < 10; i++ )
-    {
-        if (firstArray[i] == 0) {
-            let firstElement = document.getElementById("first" + digitalString[i]);
-            firstElement.classList.add("off");
-        }
-        if (secondArray[i] == 0) {
-            let secondHourelement = document.getElementById("second" + digitalString[i])
-            secondHourelement.classList.add("off");
-        } 
-        if (thridArray[i] == 0) {
-            let thirdElement = document.getElementById("third" + digitalString[i]);
-            thirdElement.classList.add("off");
-        }
-        if (fourthArray[i] == 0) {
-            let fourthElement = document.getElementById("fourth" + digitalString[i])
-            fourthElement.classList.add("off");
-        } 
+   
+    async function runClick(fristHour,secondHour,thirdMinute,fourthMinute,fifthSec,sixthSec) {
+        let firstArray = digital[fristHour];
+        let secondArray = digital[secondHour];
+        let thridArray = digital[thirdMinute];
+        let fourthArray = digital[fourthMinute];
+        let fifthArray = digital[fifthSec];
+        let sixthArray = digital[sixthSec];
     }
 
 
 
+    for (var i = 0; i < 10; i++ ) {
+        {
+            if (firstArray[i] == 0) {
+                let firstElement = document.getElementById("first" + digitalString[i]);
+                firstElement.classList.add("off");
+            }
+            if (firstArray[i] == 1) {
+                document.getElementById("first" + digitalString[i]).classList.remove("off");
+                }
+            }
+            if (secondArray[i] == 0) {
+                let secondHourelement = document.getElementById("second" + digitalString[i])
+                secondHourelement.classList.add("off");
+            } 
+            if (secondArray[i] == 1) {
+                document.getElementById("second" + digitalString[i]).classList.remove("off");
+            }
+            if (thridArray[i] == 0) {
+                let thirdElement = document.getElementById("third" + digitalString[i]);
+                thirdElement.classList.add("off");
+            }
+            if (thridArray[i] == 1) {
+                document.getElementById("third" + digitalString[i]).classList.remove("off");
+            }
+            if (fourthArray[i] == 0) {
+                let fourthElement = document.getElementById("fourth" + digitalString[i])
+                fourthElement.classList.add("off");
+            } 
+            if (fourthArray[i] == 1) {
+                document.getElementById("fourth" + digitalString[i]).classList.remove("off");
+            }
+            if (fifthArray[i] == 0) {
+                let fifthElement = document.getElementById("fifth" + digitalString[i])
+                fifthElement.classList.add("off");
+            } 
+            if (fifthArray[i] == 1) {
+                document.getElementById("fifth" + digitalString[i]).classList.remove("off");
+            }
+            if (sixthArray[i] == 0) {
+                let fifthElement = document.getElementById("sixth" + digitalString[i])
+                fifthElement.classList.add("off");
+            } 
+            if (sixthArray[i] == 1) {
+                document.getElementById("sixth" + digitalString[i]).classList.remove("off");
+            }
+    }
+
     // Adding time elements to the div
     //document.getElementById("digital-clock").innerText = hour + " : " + minute + " : " + second + " " + period;
     // Set Timer to 1 sec (1000 ms)
-    setTimeout(Time, 10000);
-   }
+    setTimeout(Time, 1000);
     // Function to update time elements if they are less than 10
     // Append 0 before time elements if they are less than 10
    function update(t) {
-    if (t < 10) {
+    if (t < 5) {
     return "0" + t;
     }
     else {
     return t;
     }
-   }
+}
+}
    Time();
