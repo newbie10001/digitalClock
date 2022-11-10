@@ -40,12 +40,21 @@ function Time() {
     // if they are less than 10
    
     async function runClick(fristHour,secondHour,thirdMinute,fourthMinute,fifthSec,sixthSec) {
-        let firstArray = digital[fristHour];
-        let secondArray = digital[secondHour];
-        let thridArray = digital[thirdMinute];
-        let fourthArray = digital[fourthMinute];
-        let fifthArray = digital[fifthSec];
-        let sixthArray = digital[sixthSec];
+        let firstArray = await digital[fristHour];
+        let secondArray = await digital[secondHour];
+        let thridArray = await digital[thirdMinute];
+        let fourthArray = await digital[fourthMinute];
+        let fifthArray = await digital[fifthSec];
+        let sixthArray = await digital[sixthSec];
+
+
+        async function circuit(firstArray) {
+        let result = firstArray.reduce((previousPromise, nextId) => {
+            return previousPromise.then(() => {
+                return circuit(nextId)
+            })
+        })
+        }
     }
 
 
